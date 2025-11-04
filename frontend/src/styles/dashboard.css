@@ -1,0 +1,142 @@
+/* Dashboard layout */
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: "Inter", sans-serif;
+  color: #e2e8f0;
+}
+
+/* --- Top stats section --- */
+.dashboard-top {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Each stat card */
+.stat-card {
+  flex: 1;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.stat-card p {
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* --- Main content section --- */
+.dashboard-main {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Chat section */
+.chat-column {
+  flex: 2;
+  min-width: 350px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.chat-column h4 {
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+/* Help / tips section */
+.help-column {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  backdrop-filter: blur(10px);
+}
+
+.help-column h4 {
+  color: #38bdf8;
+  margin-bottom: 0.8rem;
+}
+
+.quick-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-actions li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.quick-actions a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.quick-actions a:hover {
+  color: #0ea5e9;
+}
+
+/* Subtle fade animation */
+.dashboard-page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+
+  .chat-column,
+  .help-column {
+    width: 100%;
+  }
+}

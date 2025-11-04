@@ -1,0 +1,386 @@
+/* =============================
+   GLOBAL BASE STYLES
+============================= */
+:root {
+  --accent: #38bdf8;
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --radius: 10px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+/* Common utility classes */
+.page-container {
+  padding: 2rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =============================
+   NAVBAR
+============================= */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 0.8rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left .brand {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-right a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-right a:hover {
+  color: var(--accent);
+}
+
+.user-name {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* =============================
+   CHAT BOX
+============================= */
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.chat-form textarea {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 10px;
+  color: var(--text);
+  padding: 1rem;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.chat-form select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+.chat-question {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.chat-response {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.llm-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+}
+
+.error {
+  color: #f87171;
+}
+
+/* =============================
+   FILE CARDS & GRID (FIXED)
+============================= */
+
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.file-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 120px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.file-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.file-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-name {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1rem;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-actions a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.file-actions a:hover {
+  color: #0ea5e9;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #f87171;
+  transition: transform 0.15s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+.file-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.file-info span {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* =============================
+   UPLOAD DROPZONE
+============================= */
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dropzone:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+}
+
+.dropzone-inner p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.upload-progress {
+  position: relative;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.upload-progress .bar {
+  height: 6px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.upload-progress span {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* =============================
+   FILE DETAIL PAGE
+============================= */
+.file-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.file-detail-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.file-detail-right {
+  flex: 2;
+}
+
+.file-preview-image,
+.file-preview-video {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+.file-chunks {
+  margin-top: 1rem;
+}
+
+.chunk {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: var(--radius);
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* =============================
+   SETTINGS PAGE
+============================= */
+.settings-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+}
+
+/* =============================
+   EMPTY STATE
+============================= */
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 1rem;
+  font-style: italic;
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.file-card,
+.chat-item,
+.settings-card {
+  animation: fadeIn 0.3s ease;
+}
