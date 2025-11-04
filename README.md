@@ -134,6 +134,8 @@ Conversational Q&A: Ask questions about your data and get summarized answers fro
 
 - Local fallback logic: If AI APIs fail or are unavailable, the system generates concise extractive summaries from retrieved chunks.
 
+- The user can choose the answer he wants by selecting a drop down box contains MyData/ MyData + General / General answer depending upon the questions user asks.
+  
 - Per-user isolation: Each user’s files, chunks, and stats are securely separated in the database.
 
 - Interactive dashboard: Track number of files, extracted pages, and upload history.
